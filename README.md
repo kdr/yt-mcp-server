@@ -24,16 +24,23 @@ brew install uv
 # alternatively curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-### 2. Clone the Repository
+### 2. Installation Methods
+
+#### Method 1: Install from GitHub (Recommended)
+
+This is the simplest way to install and run the server:
+
+```bash
+uvx --from git+https://github.com/kdr/yt-mcp-server.git server
+```
+
+#### Method 2: Local Development Setup
+
+If you want to modify the code locally:
 
 ```bash
 git clone https://github.com/kdr/yt-mcp-server.git
 cd yt-mcp-server
-```
-
-### 3. Install Dependencies
-
-```bash
 uv venv
 source .venv/bin/activate  # On Unix/macOS
 # or
@@ -41,9 +48,26 @@ source .venv/bin/activate  # On Unix/macOS
 uv pip install -e .
 ```
 
-### 4. Configure MCP Client
+### 3. Configure MCP Client
 
 Add the following configuration to your MCP client settings:
+
+```json
+{
+    "mcpServers": {
+        "yt-mcp-server": {
+            "command": "uvx",
+            "args": [
+                "--from",
+                "git+https://github.com/kdr/yt-mcp-server.git",
+                "server"
+            ]
+        }
+    }
+}
+```
+
+For local development (Method 2), use this configuration instead:
 
 ```json
 {
@@ -52,7 +76,7 @@ Add the following configuration to your MCP client settings:
             "command": "uv",
             "args": [
                 "--directory",
-                "/ABSOLUTE/PATH/TO/PARENT/FOLDER/yt-mcp-server",
+                "/ABSOLUTE/PATH/TO/PARENT/FOLDER/yt-mcp-server/yt_mcp_server",
                 "run",
                 "main.py"
             ]
