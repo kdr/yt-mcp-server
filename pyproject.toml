@@ -9,3 +9,6 @@ dependencies = [
     "mcp[cli]>=1.6.0",
     "pytube>=15.0.0",
 ]
+
+[project.scripts]
+server = "yt_mcp_server.main:main"
