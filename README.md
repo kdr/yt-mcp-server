@@ -21,6 +21,7 @@ If you haven't installed UV yet, you can install it using:
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
+# alternatively on mac - brew install uv
 ```
 
 ### 2. Clone the Repository
