@@ -20,14 +20,14 @@ MCP server with various utility functions for dealing with YouTube data. This se
 If you haven't installed UV yet, you can install it using:
 
 ```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-# alternatively on mac - brew install uv
+brew install uv
+# alternatively curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 ### 2. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/yt-mcp-server.git
+git clone https://github.com/kdr/yt-mcp-server.git
 cd yt-mcp-server
 ```
 
